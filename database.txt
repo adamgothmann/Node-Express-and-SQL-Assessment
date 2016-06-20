@@ -1,0 +1,14 @@
+node_sql_assessment is the name of the server.
+
+colums are id, animal, number, and created.
+
+CREATE TABLE users (
+ id SERIAL PRIMARY KEY NOT NULL,
+ animal VARCHAR(20) UNIQUE,
+ number INTEGER,
+ created TIMESTAMP DEFAULT current_timestamp
+);
+
+client.query('INSERT INTO users (animal, number, created) VALUES ($1, $2, $3)', [req.body.animal, number(1, 100), 'now()']);
+
+var animal = client.query('SELECT * FROM users');
